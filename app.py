@@ -5,7 +5,7 @@ import joblib
 model = joblib.load("fraud_model.pkl")
 scaler = joblib.load("scaler.pkl")
 
-st.title("💳 Fraud Detection App")
+st.title(" Fraud Detection App")
 
 amount = st.number_input("Transaction Amount", value=100.0)
 
@@ -19,6 +19,6 @@ if st.button("Check Transaction"):
     prob = model.predict_proba(features)[0][1]
 
     if prediction == 1:
-        st.error(f"⚠️ Fraud Detected (Probability: {prob:.2f})")
+        st.error(f" Fraud Detected (Probability: {prob:.2f})")
     else:
-        st.success(f"✅ Legit Transaction (Probability: {prob:.2f})")
+        st.success(f" Legit Transaction (Probability: {prob:.2f})")
